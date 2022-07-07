@@ -82,7 +82,7 @@ static union {
         unsigned MELODY_ON : 1;
         unsigned LAST_BEEP_LONG : 1;
     } bits;
-} ff; 
+} ff;
 
 /*_____________________________________________________________________*/
 
@@ -133,7 +133,7 @@ void stop_tone() {
     ff.bits.TONE_OFF = 1;
 }
 
-void beep_short() { 
+void beep_short() {
     if (!ff.bits.ZUM_BUSY) {
         if (beep_short_count > 0) beep_short_count--;
         time_tone = SHORT_ZUMMER_DELAY;
@@ -363,14 +363,14 @@ void switch_wm() {
             ff.bits.NORMAL_WORK_MODE_ON = 0;
             ff.bits.UNIVERSAL_VORK_MODE_ON = 1;
             rele_off();
-            beep_long_count = 2; 
+            beep_long_count = 2;
         }
     } else if (ff.bits.JUMP_HIGH) {//go_norm_mode
         if (!ff.bits.NORMAL_WORK_MODE_ON) {
             ff.bits.NORMAL_WORK_MODE_ON = 1;
             ff.bits.UNIVERSAL_VORK_MODE_ON = 0;
             rele_off();
-            beep_long_count = 1; 
+            beep_long_count = 1;
         }
     }
 }
@@ -385,7 +385,7 @@ void autorotation_work() {
        ) {
         open();
         beep_short_count=1;
-  
+
         time_rotation = 0;
     }
     if ((time_rotation > AUTOROTATION_DELAY) &&
@@ -417,7 +417,7 @@ void minute_tick() {
         }
     };
 
-   
+
 
 }
 
@@ -428,10 +428,10 @@ void sec_30_work() {
         beep_short_count = 3;
     }
 }
-    void ms_100_work();
+void ms_100_work();
 void sec_work() {
 
-           
+
     sec_count++;
     if (!ff.bits.MOVING_ALLOWED) {
         if (time_moving_wait > 0) {
@@ -465,14 +465,14 @@ void sec_work() {
         }
 
     }
-                  
+
 
     if (sec_count == 60) {
         minute_tick();
         sec_count = 0;
     }
 
-}          
+}
 
 void ms_200_work() {
     if (ff.bits.ALARM_ON) {
@@ -497,7 +497,7 @@ void ms_200_work() {
             }
         }
 
-    }           
+    }
 }
 
 void PIN_POWER_MEAS_SetHigh();
@@ -505,20 +505,20 @@ void PIN_POWER_MEAS_SetHigh();
 void ms_100_work() {
 
     static char f;
-   
-        if ( !ff.bits.ALARM_ON &&(ff.bits.NORMAL_WORK_MODE_ON || ff.bits.UNIVERSAL_VORK_MODE_ON)) {     //   
-           if (!f){
-						 PIN_POWER_MEAS_SetHigh();	
-						  f=1;
-    } else{
-				   adc_ordinary_conversion_trigger_set(ADC1,ADC12_ORDINARY_TRIG_SOFTWARE,TRUE);
-		        	f=0;
-			}
+
+    if ( !ff.bits.ALARM_ON &&(ff.bits.NORMAL_WORK_MODE_ON || ff.bits.UNIVERSAL_VORK_MODE_ON)) {     //
+        if (!f) {
+            PIN_POWER_MEAS_SetHigh();
+            f=1;
+        } else {
+            adc_ordinary_conversion_trigger_set(ADC1,ADC12_ORDINARY_TRIG_SOFTWARE,TRUE);
+            f=0;
+        }
     }
 
 
 
-               
+
 }
 
 void ms_tick() {
@@ -535,7 +535,7 @@ void ms_tick() {
     ff.bits.ALLOW_JUMP = 1;
 
     if (ms_count == 100) {
-      ms_100_work();
+        ms_100_work();
         ms_200_work();
         s_count++;
         ms_count = 0;
@@ -608,7 +608,7 @@ void hardware_init() {
     crm_hick_sclk_frequency_select(CRM_HICK_SCLK_8MHZ);
     crm_clock_source_enable (CRM_CLOCK_SOURCE_HICK,TRUE);
 
-		crm_hick_divider_select(CRM_HICK48_NODIV);
+    crm_hick_divider_select(CRM_HICK48_NODIV);
 
 
 
@@ -657,7 +657,7 @@ void hardware_init() {
              GPIO_PULL_UP);
 
     gpio_set(GPIOA,
-             GPIO_PINS_4,  
+             GPIO_PINS_4,
              GPIO_DRIVE_STRENGTH_STRONGER,
              GPIO_MODE_OUTPUT,
              GPIO_OUTPUT_PUSH_PULL,
@@ -709,7 +709,7 @@ void hardware_init() {
 
 
 
-void hardware_work(){
+void hardware_work() {
     gpio_bits_write(GPIOA,GPIO_PINS_6,ff.bits.ALARM_ON);
     gpio_bits_write(GPIOA,GPIO_PINS_2,ff.bits.RELE_CONTROL_ON);
     gpio_bits_write(GPIOA,GPIO_PINS_0,ff.bits.RELE_POWER_ON);
@@ -720,7 +720,7 @@ void hardware_work(){
 }
 
 
-void zummer_switch(){
+void zummer_switch() {
     static char i =0;
     ++i;
 
@@ -738,7 +738,7 @@ void PIN_POWER_MEAS_SetHigh() {
 };
 
 void	PIN_POWER_MEAS_SetLow   () {
-   gpio_bits_reset(GPIOA,GPIO_PINS_4);
+    gpio_bits_reset(GPIOA,GPIO_PINS_4);
 };
 
 uint16_t   ADC_GetConversion() {
@@ -751,11 +751,11 @@ void get_wsp() {
 
     if (ff.bits.ALLOW_MEASURE) {
 
-BAD_WSP_VOLTAGE = (LOW_WATER_RESISTANSE / ((UP_RESISTANSE + LOW_WATER_RESISTANSE) / 4096));
-GOOD_WSP_VOLTAGE =(HIGH_WATER_RESISTANSE / ((UP_RESISTANSE + HIGH_WATER_RESISTANSE) / 4096));
+        BAD_WSP_VOLTAGE = (LOW_WATER_RESISTANSE / ((UP_RESISTANSE + LOW_WATER_RESISTANSE) / 4096));
+        GOOD_WSP_VOLTAGE =(HIGH_WATER_RESISTANSE / ((UP_RESISTANSE + HIGH_WATER_RESISTANSE) / 4096));
 
         static signed char bad_measures_counter = 0;
-         uint16_t res = ADC_GetConversion();
+        uint16_t res = ADC_GetConversion();
         PIN_POWER_MEAS_SetLow();
         if (res < BAD_WSP_VOLTAGE) {
             bad_measures_counter++;
@@ -782,19 +782,19 @@ char PIN_FUN_STATE_GetValue() {
 
 
 void get_fun() {
-        
-	if(!(ff.bits.NORMAL_WORK_MODE_ON || ff.bits.UNIVERSAL_VORK_MODE_ON)){
-            PIN_POWER_MEAS_SetHigh();
-				fun_result = gpio_input_data_bit_read(GPIOA,GPIO_PINS_3);
-			      PIN_POWER_MEAS_SetLow();
-					ff.bits.ALLOW_FUN =1;
-			}
-	
+
+    if(!(ff.bits.NORMAL_WORK_MODE_ON || ff.bits.UNIVERSAL_VORK_MODE_ON)) {
+        PIN_POWER_MEAS_SetHigh();
+        fun_result = gpio_input_data_bit_read(GPIOA,GPIO_PINS_3);
+        PIN_POWER_MEAS_SetLow();
+        ff.bits.ALLOW_FUN =1;
+    }
+
     if (ff.bits.ALLOW_FUN) {
-			
-			
+
+
         static signed char fun_counter;
- 
+
         if (PIN_FUN_STATE_GetValue()) fun_counter--;
         else fun_counter++;
 
@@ -817,7 +817,7 @@ char PIN_JUMP_STATE_GetValue() {
 }
 
 
-void get_jump(){
+void get_jump() {
 
     static signed char jump_counter;
 
@@ -850,9 +850,9 @@ void TMR6_GLOBAL_IRQHandler(void) {
 }
 
 void ADC1_CMP_IRQHandler(void) {
-	 wdt_counter_reload();
+    wdt_counter_reload();
     adc_result = adc_ordinary_conversion_data_get(ADC1);
-	  fun_result = gpio_input_data_bit_read(GPIOA,GPIO_PINS_3);
+    fun_result = gpio_input_data_bit_read(GPIOA,GPIO_PINS_3);
     ff.bits.ALLOW_MEASURE = 1;
     ff.bits.ALLOW_FUN =1;
 }
@@ -874,7 +874,7 @@ void PIN_LED_SetLow() {
     gpio_bits_reset(GPIOB,GPIO_PINS_1);
 };
 
-void start_setup() { 
+void start_setup() {
     hardware_init(); // initialize the device
 
     ff.value = 0;
@@ -882,7 +882,7 @@ void start_setup() {
     PIN_RELE_POWER_SetLow();
     PIN_RELE_CONTROL_SetLow();
     PIN_ALARM_STATE_SetLow();
-		PIN_POWER_MEAS_SetLow();
+    PIN_POWER_MEAS_SetLow();
     PIN_ZUMMER_SetLow();
     PIN_LED_SetLow();
 
