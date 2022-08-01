@@ -22,52 +22,57 @@ Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
 C:\Users\U3B6\Documents\keil\at32_project_0\project_0.uvprojx
-Project File Date:  07/04/2022
+Project File Date:  08/01/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 *** Scatter Error: no default 'Read/Write' range selected
-compiling at32f421_scfg.c...
 compiling at32f421_gpio.c...
 compiling at32f421_misc.c...
-compiling at32f421_wdt.c...
-compiling at32f421_adc.c...
-compiling at32f421_tmr.c...
+compiling at32f421_scfg.c...
 compiling main.c...
-main.c(431): warning:  #1295-D: Deprecated declaration ms_100_work - give arg types
-      void ms_100_work();
-main.c(503): warning:  #1295-D: Deprecated declaration PIN_POWER_MEAS_SetHigh - give arg types
+main.c(431): warning:  #1295-D: Deprecated declaration ms_10_work - give arg types
+  void ms_10_work();
+main.c(510): warning:  #1295-D: Deprecated declaration PIN_POWER_MEAS_SetHigh - give arg types
   void PIN_POWER_MEAS_SetHigh();
-main.c(713): warning:  #188-D: enumerated type mixed with another type
+main.c(732): warning:  #188-D: enumerated type mixed with another type
       gpio_bits_write(
 PIOA,
 PIO_PINS_6,ff.bits.ALARM_ON);
-main.c(714): warning:  #188-D: enumerated type mixed with another type
+main.c(733): warning:  #188-D: enumerated type mixed with another type
       gpio_bits_write(
 PIOA,
 PIO_PINS_2,ff.bits.RELE_CONTROL_ON);
-main.c(715): warning:  #188-D: enumerated type mixed with another type
+main.c(734): warning:  #188-D: enumerated type mixed with another type
       gpio_bits_write(
 PIOA,
 PIO_PINS_0,ff.bits.RELE_POWER_ON);
-main.c(716): warning:  #188-D: enumerated type mixed with another type
+main.c(735): warning:  #188-D: enumerated type mixed with another type
       gpio_bits_write(
 PIOB,
 PIO_PINS_1,ff.bits.LED_ON);
-main.c(732): warning:  #188-D: enumerated type mixed with another type
+main.c(751): warning:  #188-D: enumerated type mixed with another type
       if(ff.bits.TONE_ON) gpio_bits_write(
 PIOB,
 PIO_PINS_0,!
 PIOB ->odt_bit.odt0);
-main.c(937): warning:  #1-D: last line of file ends without a newline
-  }
+main.c(752): warning:  #188-D: enumerated type mixed with another type
+      if(ff.bits.TONE_ON) gpio_bits_write(
+PIOB,
+PIO_PINS_0,!
+PIOB ->odt_bit.odt0);
 main.c: 8 warnings, 0 errors
+compiling at32f421_adc.c...
+compiling at32f421_ertc.c...
+compiling at32f421_tmr.c...
 assembling startup_at32f421.s...
 compiling at32f421_crm.c...
+compiling at32f421_wdt.c...
 compiling system_at32f421.c...
+compiling at32f421_debug.c...
 linking...
-Program Size: Code=5812 RO-data=236 RW-data=64 ZI-data=1632  
+Program Size: Code=5912 RO-data=236 RW-data=68 ZI-data=1636  
 FromELF: creating hex file...
 ".\Objects\project_0.axf" - 0 Error(s), 8 Warning(s).
 
@@ -89,6 +94,8 @@ Package Vendor: ArteryTek
    * Component: scfg Version: 2.0.0
    * Component: misc Version: 2.0.0
    * Component: gpio Version: 2.0.0
+   * Component: ertc Version: 2.0.0
+   * Component: debug Version: 2.0.0
    * Component: crm Version: 2.0.0
    * Component: adc Version: 2.0.0
    * Component: at32f421_conf Version: 2.0.0
@@ -104,8 +111,8 @@ Package Vendor: ArteryTek
 
    * Component: ArteryTek::Device:startup:2.0.0
       Include file:  Device\Include\at32f421.h
-      Source file:   Device\Source\ARM\startup_at32f421.s
       Source file:   Device\Source\system_at32f421.c
+      Source file:   Device\Source\ARM\startup_at32f421.s
 
    * Component: ArteryTek::Device:at32f421_firmware_library:wdt:2.0.0
       Include file:  Device\Firmware\Peripherals\inc\at32f421_wdt.h
@@ -116,8 +123,8 @@ Package Vendor: ArteryTek
       Include file:  Device\Firmware\Peripherals\inc\at32f421_tmr.h
 
    * Component: ArteryTek::Device:at32f421_firmware_library:scfg:2.0.0
-      Source file:   Device\Firmware\Peripherals\src\at32f421_scfg.c
       Include file:  Device\Firmware\Peripherals\inc\at32f421_scfg.h
+      Source file:   Device\Firmware\Peripherals\src\at32f421_scfg.c
 
    * Component: ArteryTek::Device:at32f421_firmware_library:misc:2.0.0
       Include file:  Device\Firmware\Peripherals\inc\at32f421_misc.h
@@ -126,6 +133,14 @@ Package Vendor: ArteryTek
    * Component: ArteryTek::Device:at32f421_firmware_library:gpio:2.0.0
       Include file:  Device\Firmware\Peripherals\inc\at32f421_gpio.h
       Source file:   Device\Firmware\Peripherals\src\at32f421_gpio.c
+
+   * Component: ArteryTek::Device:at32f421_firmware_library:ertc:2.0.0
+      Source file:   Device\Firmware\Peripherals\src\at32f421_ertc.c
+      Include file:  Device\Firmware\Peripherals\inc\at32f421_ertc.h
+
+   * Component: ArteryTek::Device:at32f421_firmware_library:debug:2.0.0
+      Source file:   Device\Firmware\Peripherals\src\at32f421_debug.c
+      Include file:  Device\Firmware\Peripherals\inc\at32f421_debug.h
 
    * Component: ArteryTek::Device:at32f421_firmware_library:crm:2.0.0
       Source file:   Device\Firmware\Peripherals\src\at32f421_crm.c
@@ -139,7 +154,7 @@ Package Vendor: ArteryTek
       Include file:  Device\Include\at32f421_conf.h
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

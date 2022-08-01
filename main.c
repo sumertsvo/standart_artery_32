@@ -42,7 +42,7 @@ const char RELE_POWER_WORK_DELAY = 120; // sec
 const char RELE_POWER_AUTOROTATION_DELAY = 25; // sec
 const char RELE_GAP = 1; //sec
 const char MELODY_REPEAT_DELAY = 30; //min
-const uint32_t AUTOROTATION_DELAY = (AUTOROTATION_DAYS * 24 * 60 * 60); //D*H*M*S
+const uint32_t AUTOROTATION_DELAY = 300;//(AUTOROTATION_DAYS * 24 * 60 * 60); //D*H*M*S
 /*voltages*/
 uint16_t BAD_WSP_VOLTAGE = 0;
 uint16_t GOOD_WSP_VOLTAGE = 0;
@@ -428,7 +428,7 @@ void sec_30_work() {
         beep_short_count = 3;
     }
 }
-void ms_100_work();
+void ms_10_work();
 void sec_work() {
 
 
@@ -475,6 +475,12 @@ void sec_work() {
 }
 
 void ms_200_work() {
+	
+	if  ((beep_short_count ==0) && (beep_long_count ==0) && (!ff.bits.SIREN)) {
+		ff.bits.TONE_OFF =1;
+			ff.bits.TONE_ON =0;
+		}
+	
     if (ff.bits.ALARM_ON) {
         if (ff.bits.SIREN) {
             beep_double();
@@ -482,6 +488,7 @@ void ms_200_work() {
             if (beep_short_count > 0) {
                 beep_short();
             }
+						
         }
     } else if (ff.bits.ALARM_OFF) {
 
@@ -502,7 +509,7 @@ void ms_200_work() {
 
 void PIN_POWER_MEAS_SetHigh();
 
-void ms_100_work() {
+void ms_10_work() {
 
     static char f;
 
@@ -515,27 +522,39 @@ void ms_100_work() {
             f=0;
         }
     }
-
-
-
-
 }
 
 void ms_tick() {
+	
+	
+	
+	
+	
+	
+	
     static unsigned ms_count = 0;
+	static unsigned ms10_count = 0;
     static unsigned s_count = 0;
     ms_count++;
+		ms10_count++;
     if (time_tone > 0) {
         time_tone--;
         if (time_tone == 0) {
             stop_tone();
         }
     }
-
+		
+		
+          
     ff.bits.ALLOW_JUMP = 1;
 
+		if (ms10_count == 10) {
+        ms_10_work();
+			ms10_count = 0;
+		}
+		
     if (ms_count == 100) {
-        ms_100_work();
+      //  ms_10_work();
         ms_200_work();
         s_count++;
         ms_count = 0;
@@ -587,7 +606,7 @@ void timer_init() {
 
     tmr_channel_buffer_enable(TMR6,TRUE);
 
-    tmr_base_init(TMR6,2,400);
+    tmr_base_init(TMR6,1,500);
 
     tmr_counter_enable(TMR6,TRUE);
 
@@ -730,7 +749,7 @@ void zummer_switch() {
     }
 
     if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);
-
+    if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);
 }
 
 void PIN_POWER_MEAS_SetHigh() {
@@ -845,7 +864,7 @@ void get_jump() {
 void TMR6_GLOBAL_IRQHandler(void) {
 
     zummer_switch();
-    tmr_period_value_set(TMR6,2);
+    tmr_period_value_set(TMR6,1);
     TMR6 ->ists_bit.ovfif =0;
 }
 
@@ -900,7 +919,6 @@ void start_setup() {
     /*ms_div*/
     time_meas = 0;
 }
-
 /*¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦*/
 
 int main(void) {
@@ -914,12 +932,12 @@ int main(void) {
 
         hardware_work();
 
-
-
+        
         if (!ff.bits.ALARM_ON) {
 
-            get_jump();
-            switch_wm();
+              get_jump();
+							switch_wm();
+
 
             get_fun();
             fun_work();

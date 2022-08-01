@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\project_0.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\project_0.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Jul 07 16:20:04 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Aug 01 17:29:03 2022
 <BR><P>
 <H3>Maximum Stack Usage =         80 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -79,8 +79,8 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[2c]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
-<LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<BR><BR>[Calls]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
 <P><STRONG><a name="[2d]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
@@ -168,8 +168,8 @@ Global Symbols
 <P><STRONG><a name="[a3]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[2e]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-<LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<BR><BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
 <P><STRONG><a name="[a4]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
@@ -373,8 +373,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
 </UL>
 <BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
@@ -452,7 +452,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_set
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_100_work
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
 </UL>
 
@@ -494,7 +494,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_at32f421.o(.text)
 </UL>
 <P><STRONG><a name="[1d]"></a>TMR6_GLOBAL_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(i.TMR6_GLOBAL_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TMR6_GLOBAL_IRQHandler &rArr; zummer_switch &rArr; ms_tick &rArr; ms_100_work &rArr; PIN_POWER_MEAS_SetHigh
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TMR6_GLOBAL_IRQHandler &rArr; zummer_switch &rArr; ms_tick &rArr; ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tmr_period_value_set
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zummer_switch
@@ -528,10 +528,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[78]"></a>adc_ordinary_conversion_trigger_set</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_ordinary_conversion_trigger_set))
-<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_100_work
+<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
 </UL>
 
-<P><STRONG><a name="[4e]"></a>autorotation_work</STRONG> (Thumb, 142 bytes, Stack size 4 bytes, main.o(i.autorotation_work))
+<P><STRONG><a name="[4e]"></a>autorotation_work</STRONG> (Thumb, 140 bytes, Stack size 4 bytes, main.o(i.autorotation_work))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = autorotation_work &rArr; open
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
@@ -761,8 +761,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sec_work
 </UL>
 
-<P><STRONG><a name="[77]"></a>ms_100_work</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, main.o(i.ms_100_work))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ms_100_work &rArr; PIN_POWER_MEAS_SetHigh
+<P><STRONG><a name="[77]"></a>ms_10_work</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, main.o(i.ms_10_work))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_ordinary_conversion_trigger_set
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_POWER_MEAS_SetHigh
@@ -770,7 +770,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
 </UL>
 
-<P><STRONG><a name="[79]"></a>ms_200_work</STRONG> (Thumb, 100 bytes, Stack size 4 bytes, main.o(i.ms_200_work))
+<P><STRONG><a name="[79]"></a>ms_200_work</STRONG> (Thumb, 148 bytes, Stack size 4 bytes, main.o(i.ms_200_work))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = ms_200_work &rArr; beep_double &rArr; beep_short
 </UL>
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_short
@@ -780,13 +780,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
 </UL>
 
-<P><STRONG><a name="[7a]"></a>ms_tick</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, main.o(i.ms_tick))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = ms_tick &rArr; ms_100_work &rArr; PIN_POWER_MEAS_SetHigh
+<P><STRONG><a name="[7a]"></a>ms_tick</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, main.o(i.ms_tick))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = ms_tick &rArr; ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_tone
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sec_work
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_100_work
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zummer_switch
 </UL>
@@ -913,8 +913,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[4c]"></a>zummer_switch</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, main.o(i.zummer_switch))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = zummer_switch &rArr; ms_tick &rArr; ms_100_work &rArr; PIN_POWER_MEAS_SetHigh
+<P><STRONG><a name="[4c]"></a>zummer_switch</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, main.o(i.zummer_switch))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = zummer_switch &rArr; ms_tick &rArr; ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
 </UL>
 <BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_write
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
