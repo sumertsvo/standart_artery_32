@@ -8,13 +8,10 @@
 /*_____________________________________________________________________*/
 
 
-
-
-
 /*DEFAULT_SETTINGS*/
 #define VERSION 1
-const char SHORT_ZUMMER_DELAY = 30;
-const char LONG_ZUMMER_DELAY = 130;
+const char SHORT_ZUMMER_DELAY = 50;    
+const char LONG_ZUMMER_DELAY = 120;
 const char FRIMWARE_VERSION_EEPROM_ADR = 0x01;
 const unsigned AUTOROTATION_DAYS = 14; //???? ?? ???????? ?????
 const char MOVING_WAIT_DELAY = 1;
@@ -30,7 +27,7 @@ const char RELE_POWER_WORK_DELAY = 120; // sec
 const char RELE_POWER_AUTOROTATION_DELAY = 25; // sec
 const char RELE_GAP = 1; //sec
 const char MELODY_REPEAT_DELAY = 30; //min
-const uint32_t AUTOROTATION_DELAY = (AUTOROTATION_DAYS * 24 * 60 * 60); //D*H*M*S
+const uint32_t AUTOROTATION_DELAY = 180;//(AUTOROTATION_DAYS * 24 * 60 * 60); //D*H*M*S
 /*voltages*/
 uint16_t BAD_WSP_VOLTAGE = 0;
 uint16_t GOOD_WSP_VOLTAGE = 0;
@@ -40,9 +37,10 @@ char fun_result;
 
 /**FLAGS*/
 static union {
-    unsigned long value;
+    uint32_t value;
     struct {
-        unsigned ALARM_ON : 1;
+
+			unsigned ALARM_ON : 1;
         unsigned ALARM_OFF : 1;
         unsigned FUN_HIGH : 1;
         unsigned FUN_LOW : 1;
@@ -50,7 +48,8 @@ static union {
         unsigned ALLOW_FUN : 1;
         unsigned ALLOW_JUMP : 1;
         unsigned JUMP_LOW : 1;
-        unsigned JUMP_HIGH : 1;
+     
+			unsigned JUMP_HIGH : 1;
         unsigned OPENING : 1;
         unsigned OPENED : 1;
         unsigned CLOSING : 1;
@@ -58,17 +57,24 @@ static union {
         unsigned RELE_POWER_ON : 1;
         unsigned RELE_CONTROL_ON : 1;
         unsigned TONE_ON : 1;
-        unsigned TONE_OFF : 1;
+
+			unsigned TONE_OFF : 1;
         unsigned SIREN : 1;
         unsigned ZUM_BUSY : 1;
         unsigned MOVING_ALLOWED : 1;
         unsigned NORMAL_WORK_MODE_ON : 1;
         unsigned UNIVERSAL_VORK_MODE_ON : 1;
         unsigned LED_ON : 1;
-        unsigned MEAS_ON : 1;
-        unsigned AUTOROTATION_WORK : 1;
+        unsigned SEC_LOCK : 1;
+
+			unsigned AUTOROTATION_WORK : 1;
         unsigned MELODY_ON : 1;
-        unsigned LAST_BEEP_LONG : 1;
+        unsigned  LAST_BEEP_LONG: 1;
+				unsigned  : 1;
+				unsigned  : 1;
+				unsigned  : 1;
+				unsigned  : 1;
+				unsigned  : 1;
     } bits;
 } ff;
 
@@ -84,7 +90,8 @@ uint32_t time_rotation; //????? ?? ???????????? (???)
 unsigned time_rele_power; //????? ?? ???????? ???? (???)
 unsigned time_rele_control;
 unsigned time_rele_gap;
-unsigned time_tone;
+
+uint64_t tone_gap_millis;
 char sec_count = 0;
 char time_melody; //minute
 char time_moving_wait;
@@ -92,8 +99,9 @@ unsigned time_zummer_short; //ms
 unsigned time_zummer_long; //ms
 
 /*ms_div*/
-char time_meas;
-uint64_t milis = 0 ;
+
+uint64_t millis = 0 ; 
+unsigned ms_tone_delay = 0;
 /*_____________________________________________________________________*/
 
 
@@ -119,24 +127,30 @@ void stop_tone() {
     ff.bits.ZUM_BUSY = 0;
     ff.bits.TONE_ON = 0;
     ff.bits.TONE_OFF = 1;
+	//tone_gap_millis = millis+200;
 }
 
 void beep_short() {
     if (!ff.bits.ZUM_BUSY) {
-        if (beep_short_count > 0) beep_short_count--;
-        time_tone = SHORT_ZUMMER_DELAY;
+      //  if ((beep_short_count > 0) ||(ff.bits.SIREN)) {
+			 if (beep_short_count > 0)	beep_short_count--;
+        ms_tone_delay = SHORT_ZUMMER_DELAY;
         ff.bits.LAST_BEEP_LONG = 0;
         start_tone();
-    }
+				}
+				
+  //  }
 }
 
 void beep_long() {
     if (!ff.bits.ZUM_BUSY) {
-        if (beep_long_count > 0) beep_long_count--;
-        time_tone = LONG_ZUMMER_DELAY;
+     //   if ((beep_long_count > 0) ||(ff.bits.SIREN)){
+				if (beep_long_count > 0) 	beep_long_count--;
+        ms_tone_delay = LONG_ZUMMER_DELAY;
         ff.bits.LAST_BEEP_LONG = 1;
         start_tone();
-    }
+				}
+  //  }
 }
 
 void beep_double() {
@@ -154,7 +168,9 @@ void go_close() {
         ff.bits.OPENED = 0;
         ff.bits.OPENING = 0;
 
-        ff.bits.RELE_POWER_ON = 0;
+						
+			
+			ff.bits.RELE_POWER_ON = 0;
         ff.bits.RELE_CONTROL_ON = 1;
 
         time_rele_control = RELE_GAP + RELE_POWER_WORK_DELAY + RELE_GAP;
@@ -422,7 +438,7 @@ void ms_10_work();
 
 void sec_work() {
 
-
+    ff.bits.SEC_LOCK = 1;
     sec_count++;
 	
 	//back-forward gap
@@ -448,7 +464,8 @@ void sec_work() {
        
      //led tick
       if (ff.bits.ALARM_ON || ff.bits.CLOSING || ff.bits.OPENING) {
-          ff.bits.LED_ON = !ff.bits.LED_ON;  }
+          ff.bits.LED_ON = !ff.bits.LED_ON;  
+			}
 			else {
         static char iled;
         iled++;
@@ -462,12 +479,13 @@ void sec_work() {
 
 		 //melody tick
     if (ff.bits.ALARM_ON) {
+			
         if (sec_count == 30|| sec_count==60) {
             sec_30_work();
         }
         
 		
-    if (sec_count == 60) {
+    if (sec_count >= 60) {
         minute_tick();
         sec_count = 0;
     }
@@ -477,11 +495,7 @@ void sec_work() {
 
 void ms_200_work() {
 	
-	if  ((beep_short_count ==0) && (beep_long_count ==0) && (time_tone==0)) {
-		ff.bits.TONE_OFF =1;
-			ff.bits.TONE_ON =0;
-		ff.bits.ZUM_BUSY=0;
-		}
+        ff.bits.SEC_LOCK = 0;
 	
     if (ff.bits.ALARM_ON) {
         if (ff.bits.SIREN) {
@@ -532,41 +546,37 @@ void ms_tick() {
 
   static uint64_t ms200_count = 0;
 	static uint64_t ms10_count = 0;
-  static uint64_t s_count = 0;   
+  static uint64_t ms1000_count = 0;   
 	
 	
-   if (time_tone > 0) {
-        time_tone--;
-        if (time_tone <= 0) {
+   if (ms_tone_delay > 0) {
+        ms_tone_delay--; 
+	 }   else {
             stop_tone();
         }
-    }
+    
 		
 		
           
     ff.bits.ALLOW_JUMP = 1;
 
-		if (ms10_count <=milis) {
-			ms10_count = milis+10; 
+		if (ms10_count <=millis) {
+			ms10_count = millis+10; 
 			ms_10_work();
 		}
 		
-    if (ms200_count <= milis) {
-        ms200_count = milis + 200;
-			ms_200_work();
+    if (ms200_count <= millis) {
+        ms200_count = millis + 200;
+			  ms_200_work();
     }
 
 
-    if (s_count <= milis) {
-        sec_work();
-        s_count = milis+1000;
+    if (ms1000_count <= millis) {
+        ms1000_count = millis+1000;
+		if (!ff.bits.SEC_LOCK)	sec_work();    
     }
-		
-		
-		 
-		
-		
-    ++milis;   
+
+    ++millis;   
 }
 
 /*¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦*/
@@ -621,7 +631,7 @@ void hardware_init() {
     wdt_register_write_enable(TRUE);
     wdt_divider_set(WDT_CLK_DIV_8);
     wdt_register_write_enable(FALSE);
-    wdt_enable();
+    wdt_enable();                  //todo
     wdt_counter_reload();
 
 
@@ -744,7 +754,7 @@ void zummer_switch() {
     
 
   if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);
-  if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);
+if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);   //todo
 }
 
 void PIN_POWER_MEAS_SetHigh() {
@@ -913,15 +923,14 @@ void start_setup() {
     time_rele_power = 0;
     time_rele_control = 0;
     time_rele_gap = 0;
-    time_tone = 0;
+    ms_tone_delay = 0;
 
 
     time_melody = 0;
     time_zummer_short = 0;
     time_zummer_long = 0;
 
-    /*ms_div*/
-    time_meas = 0;
+   
 }
 /*¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦*/
 
@@ -931,8 +940,8 @@ int main(void) {
 
 
     while (1) {
-        wdt_counter_reload();
-
+       
+         wdt_counter_reload();
 
         hardware_work();
 
