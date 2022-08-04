@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\project_0.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\project_0.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Aug 01 17:29:03 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Aug 04 17:24:23 2022
 <BR><P>
 <H3>Maximum Stack Usage =         80 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -415,8 +415,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_at32f421.o(RESET)
 </UL>
-<P><STRONG><a name="[60]"></a>ADC_GetConversion</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, main.o(i.ADC_GetConversion))
-<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
+<P><STRONG><a name="[61]"></a>ADC_GetConversion</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, main.o(i.ADC_GetConversion))
+<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
 </UL>
 
 <P><STRONG><a name="[42]"></a>PIN_ALARM_STATE_SetLow</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.PIN_ALARM_STATE_SetLow))
@@ -424,11 +424,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_reset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
 </UL>
 
-<P><STRONG><a name="[5d]"></a>PIN_FUN_STATE_GetValue</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, main.o(i.PIN_FUN_STATE_GetValue))
-<BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
+<P><STRONG><a name="[5e]"></a>PIN_FUN_STATE_GetValue</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, main.o(i.PIN_FUN_STATE_GetValue))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
 </UL>
 
 <P><STRONG><a name="[44]"></a>PIN_JUMP_STATE_GetValue</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.PIN_JUMP_STATE_GetValue))
@@ -436,7 +436,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_input_data_bit_read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_jump
+<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_jump
 </UL>
 
 <P><STRONG><a name="[45]"></a>PIN_LED_SetLow</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, main.o(i.PIN_LED_SetLow))
@@ -444,7 +444,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_reset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
 </UL>
 
 <P><STRONG><a name="[46]"></a>PIN_POWER_MEAS_SetHigh</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.PIN_POWER_MEAS_SetHigh))
@@ -452,8 +452,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_set
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
 </UL>
 
 <P><STRONG><a name="[48]"></a>PIN_POWER_MEAS_SetLow</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.PIN_POWER_MEAS_SetLow))
@@ -461,9 +461,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_reset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
 </UL>
 
 <P><STRONG><a name="[49]"></a>PIN_RELE_CONTROL_SetLow</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.PIN_RELE_CONTROL_SetLow))
@@ -471,7 +471,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_reset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
 </UL>
 
 <P><STRONG><a name="[4a]"></a>PIN_RELE_POWER_SetLow</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.PIN_RELE_POWER_SetLow))
@@ -479,7 +479,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_reset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
 </UL>
 
 <P><STRONG><a name="[4b]"></a>PIN_ZUMMER_SetLow</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, main.o(i.PIN_ZUMMER_SetLow))
@@ -487,149 +487,150 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_reset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
 </UL>
 
 <P><STRONG><a name="[2a]"></a>SystemInit</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, system_at32f421.o(i.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_at32f421.o(.text)
 </UL>
-<P><STRONG><a name="[1d]"></a>TMR6_GLOBAL_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(i.TMR6_GLOBAL_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TMR6_GLOBAL_IRQHandler &rArr; zummer_switch &rArr; ms_tick &rArr; ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
+<P><STRONG><a name="[1d]"></a>TMR6_GLOBAL_IRQHandler</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, main.o(i.TMR6_GLOBAL_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TMR6_GLOBAL_IRQHandler &rArr; ms_tick &rArr; ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tmr_period_value_set
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zummer_switch
+<BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tmr_period_value_set
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zummer_switch
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_at32f421.o(RESET)
 </UL>
-<P><STRONG><a name="[6f]"></a>adc_base_config</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_base_config))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[70]"></a>adc_base_config</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_base_config))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[6e]"></a>adc_base_default_para_init</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_base_default_para_init))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[6f]"></a>adc_base_default_para_init</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_base_default_para_init))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[70]"></a>adc_enable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[71]"></a>adc_enable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_enable))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[71]"></a>adc_interrupt_enable</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_interrupt_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[72]"></a>adc_interrupt_enable</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_interrupt_enable))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[72]"></a>adc_ordinary_channel_set</STRONG> (Thumb, 404 bytes, Stack size 8 bytes, at32f421_adc.o(i.adc_ordinary_channel_set))
+<P><STRONG><a name="[73]"></a>adc_ordinary_channel_set</STRONG> (Thumb, 404 bytes, Stack size 8 bytes, at32f421_adc.o(i.adc_ordinary_channel_set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = adc_ordinary_channel_set
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
 <P><STRONG><a name="[40]"></a>adc_ordinary_conversion_data_get</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_ordinary_conversion_data_get))
 <BR><BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_CMP_IRQHandler
 </UL>
 
-<P><STRONG><a name="[78]"></a>adc_ordinary_conversion_trigger_set</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_ordinary_conversion_trigger_set))
-<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
+<P><STRONG><a name="[79]"></a>adc_ordinary_conversion_trigger_set</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, at32f421_adc.o(i.adc_ordinary_conversion_trigger_set))
+<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
 </UL>
 
-<P><STRONG><a name="[4e]"></a>autorotation_work</STRONG> (Thumb, 140 bytes, Stack size 4 bytes, main.o(i.autorotation_work))
+<P><STRONG><a name="[4f]"></a>autorotation_work</STRONG> (Thumb, 142 bytes, Stack size 4 bytes, main.o(i.autorotation_work))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = autorotation_work &rArr; open
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;go_close_short
+<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;go_close_short
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[51]"></a>beep_double</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, main.o(i.beep_double))
+<P><STRONG><a name="[52]"></a>beep_double</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, main.o(i.beep_double))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = beep_double &rArr; beep_short
 </UL>
-<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_short
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_long
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_short
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_long
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
 </UL>
 
-<P><STRONG><a name="[53]"></a>beep_long</STRONG> (Thumb, 58 bytes, Stack size 4 bytes, main.o(i.beep_long))
+<P><STRONG><a name="[54]"></a>beep_long</STRONG> (Thumb, 58 bytes, Stack size 4 bytes, main.o(i.beep_long))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = beep_long
 </UL>
-<BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_tone
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_tone
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_double
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_double
 </UL>
 
-<P><STRONG><a name="[52]"></a>beep_short</STRONG> (Thumb, 54 bytes, Stack size 4 bytes, main.o(i.beep_short))
+<P><STRONG><a name="[53]"></a>beep_short</STRONG> (Thumb, 54 bytes, Stack size 4 bytes, main.o(i.beep_short))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = beep_short
 </UL>
-<BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_tone
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_tone
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_double
-</UL>
-
-<P><STRONG><a name="[62]"></a>clear_alarm</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(i.clear_alarm))
-<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_double
 </UL>
 
-<P><STRONG><a name="[55]"></a>close</STRONG> (Thumb, 50 bytes, Stack size 4 bytes, main.o(i.close))
+<P><STRONG><a name="[63]"></a>clear_alarm</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(i.clear_alarm))
+<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
+</UL>
+
+<P><STRONG><a name="[56]"></a>close</STRONG> (Thumb, 50 bytes, Stack size 4 bytes, main.o(i.close))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = close
 </UL>
-<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rele_off
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;go_close_alt
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;go_close
+<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rele_off
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;go_close_alt
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;go_close
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fun_work
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fun_work
 </UL>
 
-<P><STRONG><a name="[6a]"></a>crm_ahb_div_set</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, at32f421_crm.o(i.crm_ahb_div_set))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[6b]"></a>crm_ahb_div_set</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, at32f421_crm.o(i.crm_ahb_div_set))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[69]"></a>crm_clock_source_enable</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, at32f421_crm.o(i.crm_clock_source_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[6a]"></a>crm_clock_source_enable</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, at32f421_crm.o(i.crm_clock_source_enable))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[5a]"></a>crm_hick_divider_select</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, at32f421_crm.o(i.crm_hick_divider_select))
-<BR><BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_hick_sclk_frequency_select
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[5b]"></a>crm_hick_divider_select</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, at32f421_crm.o(i.crm_hick_divider_select))
+<BR><BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_hick_sclk_frequency_select
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[59]"></a>crm_hick_sclk_frequency_select</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, at32f421_crm.o(i.crm_hick_sclk_frequency_select))
+<P><STRONG><a name="[5a]"></a>crm_hick_sclk_frequency_select</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, at32f421_crm.o(i.crm_hick_sclk_frequency_select))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = crm_hick_sclk_frequency_select
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_hick_divider_select
+<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_hick_divider_select
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[6b]"></a>crm_periph_clock_enable</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, at32f421_crm.o(i.crm_periph_clock_enable))
+<P><STRONG><a name="[6c]"></a>crm_periph_clock_enable</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, at32f421_crm.o(i.crm_periph_clock_enable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = crm_periph_clock_enable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[5b]"></a>fun_work</STRONG> (Thumb, 154 bytes, Stack size 4 bytes, main.o(i.fun_work))
+<P><STRONG><a name="[5c]"></a>fun_work</STRONG> (Thumb, 154 bytes, Stack size 4 bytes, main.o(i.fun_work))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = fun_work &rArr; open
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
+<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5c]"></a>get_fun</STRONG> (Thumb, 200 bytes, Stack size 8 bytes, main.o(i.get_fun))
+<P><STRONG><a name="[5d]"></a>get_fun</STRONG> (Thumb, 200 bytes, Stack size 8 bytes, main.o(i.get_fun))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = get_fun &rArr; PIN_POWER_MEAS_SetLow
 </UL>
 <BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_input_data_bit_read
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_POWER_MEAS_SetLow
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_POWER_MEAS_SetHigh
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_FUN_STATE_GetValue
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_FUN_STATE_GetValue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5e]"></a>get_jump</STRONG> (Thumb, 146 bytes, Stack size 8 bytes, main.o(i.get_jump))
+<P><STRONG><a name="[5f]"></a>get_jump</STRONG> (Thumb, 146 bytes, Stack size 8 bytes, main.o(i.get_jump))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = get_jump &rArr; PIN_JUMP_STATE_GetValue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_JUMP_STATE_GetValue
@@ -637,39 +638,39 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5f]"></a>get_wsp</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, main.o(i.get_wsp))
+<P><STRONG><a name="[60]"></a>get_wsp</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, main.o(i.get_wsp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = get_wsp &rArr; PIN_POWER_MEAS_SetLow
 </UL>
-<BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_alarm
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_alarm
+<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_alarm
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_alarm
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_POWER_MEAS_SetLow
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_GetConversion
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_GetConversion
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[57]"></a>go_close</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, main.o(i.go_close))
-<BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
+<P><STRONG><a name="[58]"></a>go_close</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, main.o(i.go_close))
+<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 </UL>
 
-<P><STRONG><a name="[58]"></a>go_close_alt</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, main.o(i.go_close_alt))
-<BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
+<P><STRONG><a name="[59]"></a>go_close_alt</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, main.o(i.go_close_alt))
+<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 </UL>
 
-<P><STRONG><a name="[50]"></a>go_close_short</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, main.o(i.go_close_short))
-<BR><BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autorotation_work
+<P><STRONG><a name="[51]"></a>go_close_short</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, main.o(i.go_close_short))
+<BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autorotation_work
 </UL>
 
 <P><STRONG><a name="[7d]"></a>go_open</STRONG> (Thumb, 102 bytes, Stack size 0 bytes, main.o(i.go_open))
-<BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
+<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
 </UL>
 
 <P><STRONG><a name="[7e]"></a>go_open_alt</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, main.o(i.go_open_alt))
-<BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
+<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
 </UL>
 
 <P><STRONG><a name="[43]"></a>gpio_bits_reset</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, at32f421_gpio.o(i.gpio_bits_reset))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_work
+<BR><BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_work
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_ZUMMER_SetLow
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_RELE_POWER_SetLow
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_RELE_CONTROL_SetLow
@@ -682,59 +683,59 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_POWER_MEAS_SetHigh
 </UL>
 
-<P><STRONG><a name="[74]"></a>gpio_bits_write</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_gpio.o(i.gpio_bits_write))
-<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zummer_switch
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_work
+<P><STRONG><a name="[75]"></a>gpio_bits_write</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_gpio.o(i.gpio_bits_write))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zummer_switch
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_work
 </UL>
 
-<P><STRONG><a name="[64]"></a>gpio_init</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, at32f421_gpio.o(i.gpio_init))
+<P><STRONG><a name="[65]"></a>gpio_init</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, at32f421_gpio.o(i.gpio_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = gpio_init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_set
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_set
 </UL>
 
 <P><STRONG><a name="[41]"></a>gpio_input_data_bit_read</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, at32f421_gpio.o(i.gpio_input_data_bit_read))
-<BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_JUMP_STATE_GetValue
 <LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_CMP_IRQHandler
 </UL>
 
-<P><STRONG><a name="[63]"></a>gpio_set</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, main.o(i.gpio_set))
+<P><STRONG><a name="[64]"></a>gpio_set</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, main.o(i.gpio_set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = gpio_set &rArr; gpio_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[65]"></a>hardware_init</STRONG> (Thumb, 336 bytes, Stack size 16 bytes, main.o(i.hardware_init))
+<P><STRONG><a name="[66]"></a>hardware_init</STRONG> (Thumb, 336 bytes, Stack size 16 bytes, main.o(i.hardware_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = hardware_init &rArr; gpio_set &rArr; gpio_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_register_write_enable
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_enable
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_divider_set
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_register_write_enable
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_enable
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_divider_set
 <LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_counter_reload
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_periph_clock_enable
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_hick_sclk_frequency_select
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_hick_divider_select
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_clock_source_enable
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_ahb_div_set
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_ordinary_channel_set
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_interrupt_enable
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_enable
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_base_default_para_init
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_base_config
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_set
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_periph_clock_enable
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_hick_sclk_frequency_select
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_hick_divider_select
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_clock_source_enable
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crm_ahb_div_set
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_ordinary_channel_set
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_interrupt_enable
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_enable
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_base_default_para_init
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_base_config
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_set
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
 </UL>
 
-<P><STRONG><a name="[73]"></a>hardware_work</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, main.o(i.hardware_work))
+<P><STRONG><a name="[74]"></a>hardware_work</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, main.o(i.hardware_work))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = hardware_work
 </UL>
-<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_write
+<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_write
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_reset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -744,15 +745,15 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = main &rArr; start_setup &rArr; hardware_init &rArr; gpio_set &rArr; gpio_init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_counter_reload
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_wm
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_work
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_jump
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fun_work
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autorotation_work
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_wm
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_setup
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_work
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_jump
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fun
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fun_work
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autorotation_work
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
@@ -761,86 +762,86 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sec_work
 </UL>
 
-<P><STRONG><a name="[77]"></a>ms_10_work</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, main.o(i.ms_10_work))
+<P><STRONG><a name="[78]"></a>ms_10_work</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, main.o(i.ms_10_work))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_ordinary_conversion_trigger_set
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_ordinary_conversion_trigger_set
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_POWER_MEAS_SetHigh
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
 </UL>
 
-<P><STRONG><a name="[79]"></a>ms_200_work</STRONG> (Thumb, 148 bytes, Stack size 4 bytes, main.o(i.ms_200_work))
+<P><STRONG><a name="[7a]"></a>ms_200_work</STRONG> (Thumb, 100 bytes, Stack size 4 bytes, main.o(i.ms_200_work))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = ms_200_work &rArr; beep_double &rArr; beep_short
 </UL>
-<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_short
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_long
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_double
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_short
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_long
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_double
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
 </UL>
 
-<P><STRONG><a name="[7a]"></a>ms_tick</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, main.o(i.ms_tick))
+<P><STRONG><a name="[4c]"></a>ms_tick</STRONG> (Thumb, 180 bytes, Stack size 8 bytes, main.o(i.ms_tick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = ms_tick &rArr; ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_tone
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sec_work
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_200_work
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_10_work
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zummer_switch
+<BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR6_GLOBAL_IRQHandler
 </UL>
 
-<P><STRONG><a name="[6d]"></a>nvic_irq_enable</STRONG> (Thumb, 190 bytes, Stack size 32 bytes, at32f421_misc.o(i.nvic_irq_enable))
+<P><STRONG><a name="[6e]"></a>nvic_irq_enable</STRONG> (Thumb, 190 bytes, Stack size 32 bytes, at32f421_misc.o(i.nvic_irq_enable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = nvic_irq_enable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[4f]"></a>open</STRONG> (Thumb, 50 bytes, Stack size 4 bytes, main.o(i.open))
+<P><STRONG><a name="[50]"></a>open</STRONG> (Thumb, 50 bytes, Stack size 4 bytes, main.o(i.open))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = open
 </UL>
-<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rele_off
+<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rele_off
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;go_open_alt
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;go_open
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fun_work
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autorotation_work
+<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fun_work
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autorotation_work
 </UL>
 
-<P><STRONG><a name="[56]"></a>rele_off</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, main.o(i.rele_off))
-<BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_wm
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
+<P><STRONG><a name="[57]"></a>rele_off</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, main.o(i.rele_off))
+<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_wm
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 </UL>
 
 <P><STRONG><a name="[7f]"></a>rele_tick</STRONG> (Thumb, 236 bytes, Stack size 0 bytes, main.o(i.rele_tick))
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sec_work
 </UL>
 
-<P><STRONG><a name="[80]"></a>sec_30_work</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, main.o(i.sec_30_work))
+<P><STRONG><a name="[80]"></a>sec_30_work</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, main.o(i.sec_30_work))
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sec_work
 </UL>
 
-<P><STRONG><a name="[7c]"></a>sec_work</STRONG> (Thumb, 218 bytes, Stack size 4 bytes, main.o(i.sec_work))
+<P><STRONG><a name="[7c]"></a>sec_work</STRONG> (Thumb, 238 bytes, Stack size 4 bytes, main.o(i.sec_work))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = sec_work
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sec_30_work
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rele_tick
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;minute_tick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
 </UL>
 
-<P><STRONG><a name="[61]"></a>start_alarm</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, main.o(i.start_alarm))
-<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
+<P><STRONG><a name="[62]"></a>start_alarm</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, main.o(i.start_alarm))
+<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_wsp
 </UL>
 
-<P><STRONG><a name="[75]"></a>start_setup</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, main.o(i.start_setup))
+<P><STRONG><a name="[76]"></a>start_setup</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, main.o(i.start_setup))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = start_setup &rArr; hardware_init &rArr; gpio_set &rArr; gpio_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_ZUMMER_SetLow
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_RELE_POWER_SetLow
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIN_RELE_CONTROL_SetLow
@@ -851,73 +852,72 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[54]"></a>start_tone</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, main.o(i.start_tone))
-<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_short
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_long
+<P><STRONG><a name="[55]"></a>start_tone</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, main.o(i.start_tone))
+<BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_short
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beep_long
 </UL>
 
 <P><STRONG><a name="[7b]"></a>stop_tone</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, main.o(i.stop_tone))
-<BR><BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
+<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
 </UL>
 
-<P><STRONG><a name="[76]"></a>switch_wm</STRONG> (Thumb, 118 bytes, Stack size 4 bytes, main.o(i.switch_wm))
+<P><STRONG><a name="[77]"></a>switch_wm</STRONG> (Thumb, 118 bytes, Stack size 4 bytes, main.o(i.switch_wm))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = switch_wm
 </UL>
-<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rele_off
+<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rele_off
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6c]"></a>timer_init</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, main.o(i.timer_init))
+<P><STRONG><a name="[6d]"></a>timer_init</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, main.o(i.timer_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = timer_init &rArr; nvic_irq_enable
 </UL>
 <BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tmr_counter_enable
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tmr_channel_buffer_enable
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tmr_base_init
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
 <P><STRONG><a name="[83]"></a>tmr_base_init</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, at32f421_tmr.o(i.tmr_base_init))
-<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
+<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
 </UL>
 
 <P><STRONG><a name="[82]"></a>tmr_channel_buffer_enable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_tmr.o(i.tmr_channel_buffer_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
+<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
 </UL>
 
 <P><STRONG><a name="[84]"></a>tmr_counter_enable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_tmr.o(i.tmr_counter_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
+<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
 </UL>
 
-<P><STRONG><a name="[4d]"></a>tmr_period_value_set</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, at32f421_tmr.o(i.tmr_period_value_set))
+<P><STRONG><a name="[4e]"></a>tmr_period_value_set</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, at32f421_tmr.o(i.tmr_period_value_set))
 <BR><BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR6_GLOBAL_IRQHandler
 </UL>
 
 <P><STRONG><a name="[3f]"></a>wdt_counter_reload</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_wdt.o(i.wdt_counter_reload))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 <LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_CMP_IRQHandler
 </UL>
 
-<P><STRONG><a name="[67]"></a>wdt_divider_set</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, at32f421_wdt.o(i.wdt_divider_set))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[68]"></a>wdt_divider_set</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, at32f421_wdt.o(i.wdt_divider_set))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[68]"></a>wdt_enable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_wdt.o(i.wdt_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[69]"></a>wdt_enable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, at32f421_wdt.o(i.wdt_enable))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[66]"></a>wdt_register_write_enable</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, at32f421_wdt.o(i.wdt_register_write_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
+<P><STRONG><a name="[67]"></a>wdt_register_write_enable</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, at32f421_wdt.o(i.wdt_register_write_enable))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hardware_init
 </UL>
 
-<P><STRONG><a name="[4c]"></a>zummer_switch</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, main.o(i.zummer_switch))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = zummer_switch &rArr; ms_tick &rArr; ms_10_work &rArr; PIN_POWER_MEAS_SetHigh
+<P><STRONG><a name="[4d]"></a>zummer_switch</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, main.o(i.zummer_switch))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = zummer_switch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_write
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms_tick
+<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bits_write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR6_GLOBAL_IRQHandler
 </UL>

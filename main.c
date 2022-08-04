@@ -4,18 +4,6 @@
 #include "at32f421_gpio.h"
 
 
-void delay(unsigned long cycles)
-{
-    while(cycles >0)
-        cycles--; // Some stupid delay, it is not in milliseconds or microseconds, but rather in some 'wasted clock cycles'
-    wdt_counter_reload();
-
-
-}
-
-
-
-
 
 /*_____________________________________________________________________*/
 
@@ -25,8 +13,8 @@ void delay(unsigned long cycles)
 
 /*DEFAULT_SETTINGS*/
 #define VERSION 1
-const char SHORT_ZUMMER_DELAY = 30;
-const char LONG_ZUMMER_DELAY = 130;
+const char SHORT_ZUMMER_DELAY = 50;    
+const char LONG_ZUMMER_DELAY = 120;
 const char FRIMWARE_VERSION_EEPROM_ADR = 0x01;
 const unsigned AUTOROTATION_DAYS = 14; //???? ?? ???????? ?????
 const char MOVING_WAIT_DELAY = 1;
@@ -42,7 +30,7 @@ const char RELE_POWER_WORK_DELAY = 120; // sec
 const char RELE_POWER_AUTOROTATION_DELAY = 25; // sec
 const char RELE_GAP = 1; //sec
 const char MELODY_REPEAT_DELAY = 30; //min
-const uint32_t AUTOROTATION_DELAY = 300;//(AUTOROTATION_DAYS * 24 * 60 * 60); //D*H*M*S
+const uint32_t AUTOROTATION_DELAY = (AUTOROTATION_DAYS * 24 * 60 * 60); //D*H*M*S
 /*voltages*/
 uint16_t BAD_WSP_VOLTAGE = 0;
 uint16_t GOOD_WSP_VOLTAGE = 0;
@@ -97,6 +85,7 @@ unsigned time_rele_power; //????? ?? ???????? ???? (???)
 unsigned time_rele_control;
 unsigned time_rele_gap;
 unsigned time_tone;
+uint64_t tone_gap_millis;
 char sec_count = 0;
 char time_melody; //minute
 char time_moving_wait;
@@ -105,7 +94,7 @@ unsigned time_zummer_long; //ms
 
 /*ms_div*/
 char time_meas;
-
+uint64_t millis = 0 ;
 /*_____________________________________________________________________*/
 
 
@@ -120,7 +109,7 @@ char beep_double_count;
 
 /*SERVICE*/
 
-
+/*sound*/
 void start_tone() {
     ff.bits.ZUM_BUSY = 1;
     ff.bits.TONE_ON = 1;
@@ -131,24 +120,30 @@ void stop_tone() {
     ff.bits.ZUM_BUSY = 0;
     ff.bits.TONE_ON = 0;
     ff.bits.TONE_OFF = 1;
+	//tone_gap_millis = millis+200;
 }
 
 void beep_short() {
     if (!ff.bits.ZUM_BUSY) {
-        if (beep_short_count > 0) beep_short_count--;
+      //  if ((beep_short_count > 0) ||(ff.bits.SIREN)) {
+			 if (beep_short_count > 0)	beep_short_count--;
         time_tone = SHORT_ZUMMER_DELAY;
         ff.bits.LAST_BEEP_LONG = 0;
         start_tone();
-    }
+				}
+				
+  //  }
 }
 
 void beep_long() {
     if (!ff.bits.ZUM_BUSY) {
-        if (beep_long_count > 0) beep_long_count--;
+     //   if ((beep_long_count > 0) ||(ff.bits.SIREN)){
+				if (beep_long_count > 0) 	beep_long_count--;
         time_tone = LONG_ZUMMER_DELAY;
         ff.bits.LAST_BEEP_LONG = 1;
         start_tone();
-    }
+				}
+  //  }
 }
 
 void beep_double() {
@@ -158,7 +153,7 @@ void beep_double() {
         beep_long();
     }
 }
-
+ /*moving*/
 void go_close() {
 
     if (!ff.bits.CLOSING && !ff.bits.CLOSED && ff.bits.MOVING_ALLOWED) {
@@ -317,7 +312,7 @@ void rele_tick() {
     }
 
 }
-
+ /*logic*/
 void start_alarm() {
     ff.bits.ALARM_ON = 1;
     ff.bits.ALARM_OFF = 0;
@@ -417,22 +412,27 @@ void minute_tick() {
         }
     };
 
-
-
 }
 
+
 void sec_30_work() {
-    if (ff.bits.SIREN) {
+    if (ff.bits.MELODY_ON){ 
+			if (ff.bits.SIREN) {
         ff.bits.SIREN = 0;
     } else {
         beep_short_count = 3;
     }
+		}
 }
+
 void ms_10_work();
+
 void sec_work() {
 
 
     sec_count++;
+	
+	//back-forward gap
     if (!ff.bits.MOVING_ALLOWED) {
         if (time_moving_wait > 0) {
             time_moving_wait--;
@@ -440,6 +440,8 @@ void sec_work() {
             ff.bits.MOVING_ALLOWED = 1;
         }
     }
+		
+		//autorotation tick
     if (ff.bits.NORMAL_WORK_MODE_ON) {
         if (!ff.bits.CLOSED) {
             time_rotation++;
@@ -447,16 +449,15 @@ void sec_work() {
         rele_tick();
     }
 
-    if (ff.bits.ALARM_ON) {
-
-        if (sec_count == 30|| sec_count==60) {
-            sec_30_work();
-        }
-
-        ff.bits.LED_ON = !ff.bits.LED_ON;
-
-    } else if (ff.bits.ALARM_OFF) {
-
+		
+		
+				
+       
+     //led tick
+      if (ff.bits.ALARM_ON || ff.bits.CLOSING || ff.bits.OPENING) {
+          ff.bits.LED_ON = !ff.bits.LED_ON;  
+			}
+			else {
         static char iled;
         iled++;
         if (iled > 2) {
@@ -467,19 +468,25 @@ void sec_work() {
     }
 
 
-    if (sec_count == 60) {
+		 //melody tick
+    if (ff.bits.ALARM_ON) {
+			
+        if (sec_count == 30|| sec_count==60) {
+            sec_30_work();
+        }
+        
+		
+    if (sec_count >= 60) {
         minute_tick();
         sec_count = 0;
     }
-
+         
+		}
 }
 
 void ms_200_work() {
 	
-	if  ((beep_short_count ==0) && (beep_long_count ==0) && (!ff.bits.SIREN)) {
-		ff.bits.TONE_OFF =1;
-			ff.bits.TONE_ON =0;
-		}
+
 	
     if (ff.bits.ALARM_ON) {
         if (ff.bits.SIREN) {
@@ -527,45 +534,44 @@ void ms_10_work() {
 void ms_tick() {
 	
 	
+
+  static uint64_t ms200_count = 0;
+	static uint64_t ms10_count = 0;
+  static uint64_t s_count = 0;   
 	
 	
-	
-	
-	
-    static unsigned ms_count = 0;
-	static unsigned ms10_count = 0;
-    static unsigned s_count = 0;
-    ms_count++;
-		ms10_count++;
-    if (time_tone > 0) {
-        time_tone--;
-        if (time_tone == 0) {
+   if (time_tone > 0) {
+        time_tone--; 
+	 }   else {
             stop_tone();
         }
-    }
+    
 		
 		
           
     ff.bits.ALLOW_JUMP = 1;
 
-		if (ms10_count == 10) {
-        ms_10_work();
-			ms10_count = 0;
+		if (ms10_count <=millis) {
+			ms10_count = millis+10; 
+			ms_10_work();
 		}
 		
-    if (ms_count == 100) {
-      //  ms_10_work();
-        ms_200_work();
-        s_count++;
-        ms_count = 0;
+    if (ms200_count <= millis) {
+        ms200_count = millis + 200;
+			ms_200_work();
     }
 
 
-    if (s_count == 10) {
+    if (s_count <= millis) {
         sec_work();
-        s_count = 0;
+        s_count = millis+1000;
     }
-
+		
+		
+		 
+		
+		
+    ++millis;   
 }
 
 /*¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦*/
@@ -620,7 +626,7 @@ void hardware_init() {
     wdt_register_write_enable(TRUE);
     wdt_divider_set(WDT_CLK_DIV_8);
     wdt_register_write_enable(FALSE);
-    wdt_enable();
+    wdt_enable();                  //todo
     wdt_counter_reload();
 
 
@@ -740,16 +746,10 @@ void hardware_work() {
 
 
 void zummer_switch() {
-    static char i =0;
-    ++i;
+    
 
-    if (i>=8) {
-        ms_tick();
-        i=0;
-    }
-
-    if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);
-    if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);
+  if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);
+ //if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);   //todo
 }
 
 void PIN_POWER_MEAS_SetHigh() {
@@ -863,7 +863,16 @@ void get_jump() {
 
 void TMR6_GLOBAL_IRQHandler(void) {
 
-    zummer_switch();
+    
+	static char i =0;
+    ++i;
+
+    if (i>=8) {
+        ms_tick();
+        i=0;
+    }    
+		
+		zummer_switch();
     tmr_period_value_set(TMR6,1);
     TMR6 ->ists_bit.ovfif =0;
 }

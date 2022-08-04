@@ -1,5 +1,5 @@
 Dependencies for Project 'project_0', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x62E7E32D)(--c99 -c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\-AT32F421K8T7-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DAT32F421K8T7-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x62EBD696)(--c99 -c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\-AT32F421K8T7-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DAT32F421K8T7-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\at32f421.h)(0x6246B318)
 I (.\RTE\_Target_1\RTE_Components.h)(0x62E7DDA7)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F912E)
@@ -63,6 +63,37 @@ I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_scfg.h)(0x6246B322)
 F (RTE\Device\-AT32F421K8T7\at32f421_conf.h)(0x6246B318)()
 F (RTE\Device\-AT32F421K8T7\at32f421_crm.c)(0x6246B326)(--c99 -c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\-AT32F421K8T7-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DAT32F421K8T7-o .\objects\at32f421_crm.o --omf_browse .\objects\at32f421_crm.crf --depend .\objects\at32f421_crm.d)
+I (RTE\Device\-AT32F421K8T7\at32f421_conf.h)(0x6246B318)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_crm.h)(0x6246B31C)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\at32f421.h)(0x6246B318)
+I (.\RTE\_Target_1\RTE_Components.h)(0x62E7DDA7)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F912E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BC994)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F912E)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\system_at32f421.h)(0x6246B318)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_def.h)(0x6246B31E)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\at32f421_conf.h)(0x6246B318)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_tmr.h)(0x6246B322)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_ertc.h)(0x6246B31E)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_gpio.h)(0x6246B320)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_i2c.h)(0x6246B320)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_usart.h)(0x6246B324)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_pwc.h)(0x6246B322)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_adc.h)(0x6246B31C)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_spi.h)(0x6246B322)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_dma.h)(0x6246B31E)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_debug.h)(0x6246B31E)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_flash.h)(0x6246B320)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_crc.h)(0x6246B31C)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_wwdt.h)(0x6246B324)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_wdt.h)(0x6246B324)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_exint.h)(0x6246B320)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_misc.h)(0x6246B320)
+I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_scfg.h)(0x6246B322)
+F (RTE\Device\-AT32F421K8T7\at32f421_debug.c)(0x6246B326)(--c99 -c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\-AT32F421K8T7-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DAT32F421K8T7-o .\objects\at32f421_debug.o --omf_browse .\objects\at32f421_debug.crf --depend .\objects\at32f421_debug.d)
 I (RTE\Device\-AT32F421K8T7\at32f421_conf.h)(0x6246B318)
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_crm.h)(0x6246B31C)
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\at32f421.h)(0x6246B318)
@@ -293,37 +324,6 @@ I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\system_at32f4
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_def.h)(0x6246B31E)
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\at32f421_conf.h)(0x6246B318)
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_crm.h)(0x6246B31C)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_tmr.h)(0x6246B322)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_ertc.h)(0x6246B31E)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_gpio.h)(0x6246B320)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_i2c.h)(0x6246B320)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_usart.h)(0x6246B324)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_pwc.h)(0x6246B322)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_adc.h)(0x6246B31C)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_spi.h)(0x6246B322)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_dma.h)(0x6246B31E)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_debug.h)(0x6246B31E)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_flash.h)(0x6246B320)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_crc.h)(0x6246B31C)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_wwdt.h)(0x6246B324)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_wdt.h)(0x6246B324)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_exint.h)(0x6246B320)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_misc.h)(0x6246B320)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_scfg.h)(0x6246B322)
-F (RTE\Device\-AT32F421K8T7\at32f421_debug.c)(0x6246B326)(--c99 -c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\-AT32F421K8T7-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DAT32F421K8T7-o .\objects\at32f421_debug.o --omf_browse .\objects\at32f421_debug.crf --depend .\objects\at32f421_debug.d)
-I (RTE\Device\-AT32F421K8T7\at32f421_conf.h)(0x6246B318)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_crm.h)(0x6246B31C)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\at32f421.h)(0x6246B318)
-I (.\RTE\_Target_1\RTE_Components.h)(0x62E7DDA7)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F912E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BC994)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F912E)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\system_at32f421.h)(0x6246B318)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_def.h)(0x6246B31E)
-I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Include\at32f421_conf.h)(0x6246B318)
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_tmr.h)(0x6246B322)
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_ertc.h)(0x6246B31E)
 I (C:\Keil_v5\ARM\PACK\ArteryTek\AT32F421_DFP\2.0.5\Device\Firmware\Peripherals\inc\at32f421_gpio.h)(0x6246B320)
