@@ -50,6 +50,8 @@ unsigned int system_core_clock           = HICK_VALUE; /*!< system clock frequen
   * @}
   */
 
+
+
 /** @addtogroup AT32F421_system_private_functions
   * @{
   */
@@ -202,6 +204,7 @@ void system_core_clock_update(void)
   div_value = sys_ahb_div_table[temp];
   /* ahbclk frequency */
   system_core_clock = system_core_clock >> div_value;
+
 }
 /**
   * @}

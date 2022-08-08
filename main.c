@@ -5,12 +5,13 @@
 
 
 
+
 /*_____________________________________________________________________*/
 
 
 /*DEFAULT_SETTINGS*/
 #define VERSION 1
-const char SHORT_ZUMMER_DELAY = 50;
+const char SHORT_ZUMMER_DELAY = 30;
 const char LONG_ZUMMER_DELAY = 120;
 const char FRIMWARE_VERSION_EEPROM_ADR = 0x01;
 const unsigned AUTOROTATION_DAYS = 14; //???? ?? ???????? ?????
@@ -129,22 +130,22 @@ void stop_tone() {
 }
 
 void beep_short() {
-    if (!ff.bits.ZUM_BUSY) {
+   // if (!ff.bits.ZUM_BUSY) {
         if (beep_short_count > 0)	beep_short_count--;
         ms_tone_delay = SHORT_ZUMMER_DELAY;
         ff.bits.LAST_BEEP_LONG = 0;
         start_tone();
     }
-}
+//}
 
 void beep_long() {
-    if (!ff.bits.ZUM_BUSY) {
+  //  if (!ff.bits.ZUM_BUSY) {
         if (beep_long_count > 0) 	beep_long_count--;
         ms_tone_delay = LONG_ZUMMER_DELAY;
         ff.bits.LAST_BEEP_LONG = 1;
         start_tone();
     }
-}
+//}
 
 void beep_double() {
     if (ff.bits.LAST_BEEP_LONG) {
@@ -421,7 +422,7 @@ void sec_30_work() {
         if (ff.bits.SIREN) {
             ff.bits.SIREN = 0;
         } else {
-            beep_short_count = 3;
+            beep_long_count = 3;
         }
     }
 }
@@ -471,7 +472,7 @@ void sec_work() {
             sec_30_work();
         }
 
-        if (sec_count >= 60) {
+        if (sec_count == 60) {
             minute_tick();
             sec_count = 0;
         }
@@ -527,8 +528,9 @@ void ms_10_work() {
 }
 
 void ms_tick() {
-
-
+	
+ //  EventRecord2(0x01,millis,0);
+       
 
     static uint64_t ms200_count = 0;
     static uint64_t ms10_count = 0;
@@ -557,10 +559,13 @@ void ms_tick() {
 
     if (ms1000_count <= millis) {
         ms1000_count = millis+1000;
-        if (!ff.bits.SEC_LOCK)	sec_work();
+      //  if (!ff.bits.SEC_LOCK)
+					sec_work();
     }
 
+
     ++millis;
+	//	 EventRecord2(0x02,millis,0);
 }
 
 /*¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦*/
@@ -724,21 +729,23 @@ void hardware_init() {
 
 
 void hardware_work() {
-    gpio_bits_write(GPIOA,GPIO_PINS_6,ff.bits.ALARM_ON);
-    gpio_bits_write(GPIOA,GPIO_PINS_2,ff.bits.RELE_CONTROL_ON);
-    gpio_bits_write(GPIOA,GPIO_PINS_0,ff.bits.RELE_POWER_ON);
-    gpio_bits_write(GPIOB,GPIO_PINS_1,ff.bits.LED_ON);
+    gpio_bits_write(GPIOA,GPIO_PINS_6,(confirm_state) (ff.bits.ALARM_ON));
+    gpio_bits_write(GPIOA,GPIO_PINS_2,(confirm_state) (ff.bits.RELE_CONTROL_ON));
+    gpio_bits_write(GPIOA,GPIO_PINS_0,(confirm_state) (ff.bits.RELE_POWER_ON));
+    gpio_bits_write(GPIOB,GPIO_PINS_1,(confirm_state) (ff.bits.LED_ON));
     if (ff.bits.TONE_OFF) {
         gpio_bits_reset(GPIOB,GPIO_PINS_0);
     };
 }
 
 
+
+
 void zummer_switch() {
 
 
-    if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,(enum !GPIOB ->odt_bit.odt0));
-   // if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);   //todo
+    if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,(confirm_state) (!GPIOB ->odt_bit.odt0));
+//    if(ff.bits.TONE_ON) gpio_bits_write(GPIOB,GPIO_PINS_0,!GPIOB ->odt_bit.odt0);   //todo
 }
 
 void PIN_POWER_MEAS_SetHigh() {
@@ -915,10 +922,13 @@ void start_setup() {
 }
 /*¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦*/
 
+
+
 int main(void) {
 
+	
     start_setup();
-
+  //  EventRecorderInitialize(EventRecordAll,1);
 
     while (1) {
 

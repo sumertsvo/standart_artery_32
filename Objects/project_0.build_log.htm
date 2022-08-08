@@ -22,51 +22,28 @@ Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
 C:\Users\U3B6\Documents\keil\at32_project_0\project_0.uvprojx
-Project File Date:  08/01/2022
+Project File Date:  08/05/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 *** Scatter Error: no default 'Read/Write' range selected
-compiling main.c...
-main.c(727): warning:  #188-D: enumerated type mixed with another type
-      gpio_bits_write(
-PIOA,
-PIO_PINS_6,ff.bits.ALARM_ON);
-main.c(728): warning:  #188-D: enumerated type mixed with another type
-      gpio_bits_write(
-PIOA,
-PIO_PINS_2,ff.bits.RELE_CONTROL_ON);
-main.c(729): warning:  #188-D: enumerated type mixed with another type
-      gpio_bits_write(
-PIOA,
-PIO_PINS_0,ff.bits.RELE_POWER_ON);
-main.c(730): warning:  #188-D: enumerated type mixed with another type
-      gpio_bits_write(
-PIOB,
-PIO_PINS_1,ff.bits.LED_ON);
-main.c(740): error:  #110: expected either a definition or a tag name
-      if(ff.bits.TONE_ON) gpio_bits_write(
-PIOB,
-PIO_PINS_0,(enum !GPIOB ->odt_bit.odt0));
-main.c(740): error:  #29: expected an expression
-      if(ff.bits.TONE_ON) gpio_bits_write(
-PIOB,
-PIO_PINS_0,(enum !
-PIOB ->odt_bit.odt0));
-main.c: 4 warnings, 2 errors
-compiling at32f421_gpio.c...
 compiling at32f421_scfg.c...
 compiling at32f421_debug.c...
+compiling at32f421_misc.c...
+compiling at32f421_gpio.c...
+compiling main.c...
+compiling at32f421_ertc.c...
 compiling at32f421_adc.c...
 compiling at32f421_crm.c...
-compiling at32f421_ertc.c...
-compiling at32f421_misc.c...
 assembling startup_at32f421.s...
-compiling at32f421_tmr.c...
 compiling at32f421_wdt.c...
 compiling system_at32f421.c...
-".\Objects\project_0.axf" - 2 Error(s), 4 Warning(s).
+compiling at32f421_tmr.c...
+linking...
+Program Size: Code=5908 RO-data=236 RW-data=100 ZI-data=1636  
+FromELF: creating hex file...
+".\Objects\project_0.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -102,13 +79,13 @@ Package Vendor: ArteryTek
 <h2>Collection of Component Files used:</h2>
 
    * Component: ArteryTek::Device:startup:2.0.0
-      Source file:   Device\Source\ARM\startup_at32f421.s
       Source file:   Device\Source\system_at32f421.c
+      Source file:   Device\Source\ARM\startup_at32f421.s
       Include file:  Device\Include\at32f421.h
 
    * Component: ArteryTek::Device:at32f421_firmware_library:wdt:2.0.0
-      Source file:   Device\Firmware\Peripherals\src\at32f421_wdt.c
       Include file:  Device\Firmware\Peripherals\inc\at32f421_wdt.h
+      Source file:   Device\Firmware\Peripherals\src\at32f421_wdt.c
 
    * Component: ArteryTek::Device:at32f421_firmware_library:tmr:2.0.0
       Include file:  Device\Firmware\Peripherals\inc\at32f421_tmr.h
@@ -119,16 +96,16 @@ Package Vendor: ArteryTek
       Include file:  Device\Firmware\Peripherals\inc\at32f421_scfg.h
 
    * Component: ArteryTek::Device:at32f421_firmware_library:misc:2.0.0
-      Include file:  Device\Firmware\Peripherals\inc\at32f421_misc.h
       Source file:   Device\Firmware\Peripherals\src\at32f421_misc.c
+      Include file:  Device\Firmware\Peripherals\inc\at32f421_misc.h
 
    * Component: ArteryTek::Device:at32f421_firmware_library:gpio:2.0.0
       Include file:  Device\Firmware\Peripherals\inc\at32f421_gpio.h
       Source file:   Device\Firmware\Peripherals\src\at32f421_gpio.c
 
    * Component: ArteryTek::Device:at32f421_firmware_library:ertc:2.0.0
-      Include file:  Device\Firmware\Peripherals\inc\at32f421_ertc.h
       Source file:   Device\Firmware\Peripherals\src\at32f421_ertc.c
+      Include file:  Device\Firmware\Peripherals\inc\at32f421_ertc.h
 
    * Component: ArteryTek::Device:at32f421_firmware_library:debug:2.0.0
       Include file:  Device\Firmware\Peripherals\inc\at32f421_debug.h
@@ -146,8 +123,7 @@ Package Vendor: ArteryTek
       Include file:  Device\Include\at32f421_conf.h
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Target not created.
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
