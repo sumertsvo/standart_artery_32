@@ -360,14 +360,14 @@ void switch_wm() {
             ff.bits.NORMAL_WORK_MODE_ON = 0;
             ff.bits.UNIVERSAL_VORK_MODE_ON = 1;
             rele_off();
-            beep_long_count = 2;
+          //  beep_long_count = 2;
         }
     } else if (ff.bits.JUMP_HIGH) {//go_norm_mode
         if (!ff.bits.NORMAL_WORK_MODE_ON) {
             ff.bits.NORMAL_WORK_MODE_ON = 1;
             ff.bits.UNIVERSAL_VORK_MODE_ON = 0;
             rele_off();
-            beep_long_count = 1;
+          //  beep_long_count = 1;
         }
     }
 }
@@ -422,7 +422,7 @@ void sec_30_work() {
         if (ff.bits.SIREN) {
             ff.bits.SIREN = 0;
         } else {
-            beep_long_count = 3;
+            beep_short_count = 3;  //connect to ms200
         }
     }
 }
@@ -488,7 +488,7 @@ void ms_200_work() {
         if (ff.bits.SIREN) {
             beep_double();
         } else {
-            if (beep_short_count > 0) {
+            if (beep_short_count > 0) {     //connect to sec30
                 beep_short();
             }
 
