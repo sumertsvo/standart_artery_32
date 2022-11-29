@@ -2,7 +2,6 @@
 ".\objects\main.o"
 ".\objects\at32f421_adc.o"
 ".\objects\at32f421_crm.o"
-".\objects\at32f421_debug.o"
 ".\objects\at32f421_ertc.o"
 ".\objects\at32f421_gpio.o"
 ".\objects\at32f421_misc.o"
